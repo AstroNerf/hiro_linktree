@@ -1,5 +1,6 @@
 /*  Ton fichier contenant toutes des variables de couleurs pour ton site  */
 :root {
+    --background: #f2f0ee;
     --primary: #515251;
     --primary-dark: #404040;
     --primary-light: #F6F6F6;

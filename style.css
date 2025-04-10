@@ -3,50 +3,265 @@ TOUTES LES VARIABLES SONT IMPORTEES D'AUTRES FICHIERS DANS LE DOSSIER STYLES
 */
 
 /*------  IMPORT   -----*/
-@import './styles/all_variables.css'; /* qu'un seuk fichier qui contient toutes les variables */
-
+@import "./styles/all_variables.css"; /* qu'un seuk fichier qui contient toutes les variables */
 
 /*------  RESET CSS  -----*/
-*, *:before, *:after {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    text-decoration: none;
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    max-height: 100vh;
-    margin: 0;
-    padding: 0;
-    max-width: var(--w-100);
-    overflow-x: hidden;
-    box-sizing: border-box;
+  max-height: 100dvh;
+  height: 100dvhh;
+  margin: 0;
+  padding: 0;
+  max-width: var(--w-100);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/*------ GENERIC CLASSES  -----*/
+body {
+  width: var(--w-100);
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: var(--spacing-2);
+}
+
+header {
+  flex: 1; /* Partage l'espace restant avec le footer */
+  min-height: 0; /* Important pour que flex puisse réduire la hauteur si nécessaire */
+  padding-bottom: var(--spacing-4);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main {
-    padding: 10rem ;
+  position: relative;
+  width: var(--w-100);
+  height: 90dvh; /* Hauteur fixe pour le contenu principal */
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  padding: var(--spacing-8) var(--spacing-4);
+  
+  border: 1px solid var(--shadow-dark);
+  border-radius: var(--radius-lg);
+}
+
+footer {
+  flex: 1; /* Partage l'espace restant avec le header */
+  min-height: 0; /* Important pour que flex puisse réduire la hauteur si nécessaire */
+  padding-top: var(--spacing-4);
 }
 
 h1 {
-    color: black;
-    font-family: var(--font-title);
-    font-size: var(--text-h3);
+  font-family: var(--font-title);
+  font-size: var(--text-h3);
+  text-align: right;
 }
 
 h2 {
-    color: black;
-    font-family: var(--font-main);
-    font-size: var(--text-base);
+  font-family: var(--font-title);
+  font-size: var(--text-base);
+  font-style: italic;
+  width: var(--w-70);
+  text-align: right;
 }
 
-@media (max-width: 767px)  {
-    main {
-        padding: 8rem 2rem;
+/*---------  CUSTOM CLASSES  -------*/
+
+/*---------  HEADER  -------*/
+.header-brand-title {
+    font-family: var(--font-brand);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .header-brand-title-letter-italic {
+    letter-spacing: -1.2px;
+    margin-right: 2px;
+  }
+
+  .header-avatar-container {
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+}
+
+.header-avatar {
+    width: var(--w-100);
+    height: var(--h-100);
+    object-fit: cover;
+    border-radius: var(--radius-full);
+}
+
+
+/*---------  MAIN TOP  -------*/
+.links-container {
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+}
+
+
+/*-------------- ☎️ ASIDE NAVBAR  -------------*/
+.menu-toggle {
+  /* background-color: purple; */
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--gap-md);
+  width: var(--w-100);
+  padding-top: 1rem;
+}
+
+.menu-icons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-sm);
+}
+
+/* les 3 buttons d'icons qui apparaissent en cliquant */
+.menu-icons .icon-circle {
+  transform: translateX(-500px);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+
+/* je mets un délais d'apparition différent pour chaque icon */
+.menu-icons .icon-circle:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.menu-icons .icon-circle:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.menu-icons .icon-circle:nth-child(1) {
+  transition-delay: 0.4s;
+}
+
+.icon-circle {
+  background-color: var(--wht);
+  border: 0.7px solid var(--shadow-dark);
+  border-radius: var(--radius-full);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.icon-circle:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: all 0.2s ease-out;
+}
+
+/* bouton burger icon */
+.burger-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  position: absolute;
+  left: -0.5rem;
+  /* margin-top: 10rem; */
+  z-index: 100;
+
+  /* border: 0.2px solid var(--shadow-dark); */
+  color: var(--primary);
+  background-color: var(--wht);
+  transition: all 0.3s ease;
+}
+
+/* pour permettre aux icons des liens médias d'apparaître, j'utilise un checkbox qui est invisible et positionné au dessus du bouton burger ce qui donne l'illusion de cliquer dessus */
+.menu-checkbox {
+  margin-left: -0.5rem;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.menu-checkbox:checked ~ .menu-icons .icon-circle {
+  transform: translateX(0);
+}
+
+.menu-checkbox:checked ~ .burger-btn {
+  /* background-color: var(--shadow-dark); */
+  /* opacity: 49%; */
+  background-color: var(--primary-light);
+  transform: rotate(90deg);
+}
+
+
+/*---------  MAIN BOTTOM  -------*/
+.main-bottom-container {
+  /* background-color: greenyellow; */
+  /* position: absolute;
+  left: var(--spacing-2);
+  bottom: var(--spacing-3); */
+  width: var(--w-100);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+
+
+
+
+
+/*---------  QUERIES  -------*/
+@media (min-width: 380px) {
+    .menu-icons {
         display: flex;
         flex-direction: column;
         gap: var(--gap-sm);
+      }
+
+      .menu-icons .icon-circle:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      
+      .menu-icons .icon-circle:nth-child(2) {
+        transition-delay: 0.3s;
+      }
+      
+      .menu-icons .icon-circle:nth-child(3) {
+        transition-delay: 0.4s;
+      }
+  }
+
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+    main {
+        max-width: var(--container-max-width);
+    }
+  .menu-icons .icon-circle {
+    transform: translateX(
+      -500px
+    ); /* sur desktop, les boutons sont positionnés en dehors de l'écran. On ne les voit pas de base. */
+  }
 }
 

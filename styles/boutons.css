@@ -1,6 +1,4 @@
 /* Ton fichier contenant des boutons à pouvoir réutiliser */
-
-@import './layout.css';
 :root {
   /* Boutons */
   --button-padding-y: var(--spacing-2);

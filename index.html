@@ -1,27 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiro Linktree</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/rabbitude.png"> <!-- ceci est ton favicon : la petite image dans l'onglet -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/rabbitude.png">
+    <!-- ceci est ton favicon : la petite image dans l'onglet -->
 </head>
+
 <body>
     <header>
-
+        <p class="header-brand-title">
+            <span class="header-brand-title-letter-italic">/-/</span>iro Rabbit
+        </p>
+        <div class="header-avatar-container">
+            <img src="./assets/images/baboon.png" alt="avatar cyber monkey" class="header-avatar">
+        </div>
     </header>
 
     <main>
-       <h1>Bonjour le Monde, j'imagine ?</h1>
-       <h2> 
-        Ceci est ta porte vers le web développement
-       </h2>
+
+        <div class="links-container">
+            <a href="http://" class="btn btn-secondary">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
+                    </svg>
+                </span> Malt
+            </a>
+
+            <a href="http://" class="btn btn-secondary">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
+                    </svg>
+                </span> Malt
+            </a>
+
+            <a href="http://" class="btn btn-secondary">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
+                    </svg>
+                </span> Malt
+            </a>
+        </div>
+
+        <!------- ASIDE NAVBAR ------->
+        <div class="menu-toggle">
+            <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+            <div class="menu-icons">
+                <a href target="_blank" rel="noopener noreferrer" class="icon-circle ">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1.9em" height="1.9em"
+                        viewBox="0 0 24 24">
+                        <g fill="none" stroke="#515251" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" clas>
+                            <path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" />
+                            <path
+                                d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6.067 1-5.863 6.5c.074 1.987.036 4.385.363 7c1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17" />
+                        </g>
+                    </svg>
+                </a>
+                <a href target="_blank" rel="noopener noreferrer" class="icon-circle">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1.9em" height="1.9em"
+                        viewBox="0 0 24 24">
+                        <path fill="#515251"
+                            d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12s12-5.373 12-12S18.627 0 12 0m-1.314 4.715c3.289 0 5.956 2.66 5.956 5.943a.879.879 0 0 1-1.758 0a4.194 4.194 0 0 0-4.198-4.189a.878.878 0 1 1 0-1.754m-5.092 9.504a.88.88 0 0 1-.879-.877a5.95 5.95 0 0 1 5.956-5.945a.878.878 0 1 1 0 1.753a4.195 4.195 0 0 0-4.198 4.191a.88.88 0 0 1-.879.878m7.735 5.067c-3.29 0-5.957-2.662-5.957-5.944a.88.88 0 0 1 1.758 0a4.194 4.194 0 0 0 4.199 4.189a.879.879 0 1 1 0 1.755m0-2.683a.88.88 0 0 1-.88-.876a.88.88 0 0 1 .88-.878a4.195 4.195 0 0 0 4.199-4.19a.878.878 0 0 1 1.758 0c0 3.282-2.667 5.944-5.957 5.944" />
+                    </svg>
+                </a>
+                <a href target="_blank" rel="noopener noreferrer" class="icon-circle">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1.9em" height="1.9em"
+                        viewBox="0 0 48 48">
+                        <path fill="none" stroke="#515251" stroke-linecap="round" stroke-linejoin="round"
+                            d="M35.32 28.09V8.5a3 3 0 0 0-3-3h-1.21a3 3 0 0 0-3 3v19.59Zm-7.21 7.22v4.19a3 3 0 0 0 3 3h1.21a3 3 0 0 0 3-3v-4.19ZM12.7 28.09H8.51a3 3 0 0 0-3 3v1.22a3 3 0 0 0 3 3h4.19Zm26.81 0H19.92v7.22h19.59a3 3 0 0 0 3-3v-1.22a3 3 0 0 0-3-3m-11.4-15.4H8.51a3 3 0 0 0-3 3v1.22a3 3 0 0 0 3 3h19.6Zm11.4 0h-4.19v7.22h4.19a3 3 0 0 0 3-3v-1.22a3 3 0 0 0-3-3" />
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.92 12.69V8.5a3 3 0 0 0-3-3H15.7a3 3 0 0 0-3 3v4.19Zm-7.22 7.22V39.5a3 3 0 0 0 3 3h1.22a3 3 0 0 0 3-3V19.91Z" />
+                    </svg>
+                </a>
+            </div>
+            <button class="burger-btn" aria-label="Toggle menu" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.9em" height="1.9em" viewBox="0 0 48 48">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        d="M5.5 24h37m-37 13h37m-37-26h37" stroke-width="1" />
+                </svg>
+            </button>
+        </div>
+
+
+        <div class="main-bottom-container">
+           
+                <h1>
+                    creative web dev
+                </h1>
+                <h2>
+                    the key to your MVP
+                </h2>
+            
+           
+        </div>
+
     </main>
 
     <footer>
 
     </footer>
-    
+
 </body>
+
 </html>
