@@ -44,6 +44,14 @@ Ce projet respecte scrupuleusement les exigences suivantes :
   - Choix imposé parmi 4 styles de design: Futurisme, Glassmorphisme, Pixel Art ou Design Asymétrique
   - Influences autorisées: Neumorphisme et Minimalisme comme inspirations complémentaires
 
+## Déploiement :
+
+Projet déployé avec [Surge](https://surge.sh), une plateforme d'hébergement statique ultra-rapide
+- Surge.sh offre un déploiement simplifié via ligne de commande en une seule commande
+- Solution idéale pour les projets HTML/CSS purs grâce à sa gratuité, sa simplicité d'utilisation et ses performances élevées
+- Permet d'obtenir un URL public personnalisable instantanément sans configuration complexe
+[Version Beta](https://hiro-tree.surge.sh)
+
 ## Organisation des fichiers
 <img width="1238" alt="Capture d’écran 2025-04-10 à 18 49 13" src="https://github.com/user-attachments/assets/5538664e-a350-445c-9709-e4ec960d671a" />
 J'ai organisé ce repo pour vous faciliter la vie et vous introduire aux bonnes pratiques d'architecture CSS :
@@ -113,7 +121,7 @@ code .
 # Ou simplement ouvrez index.html dans votre navigateur préféré
 ```
 
-À partir de là, vous pouvez commencer à personnaliser votre Linktree en modifiant le HTML et le CSS selon vos besoins. La structure et les variables sont déjà en place pour vous faciliter le travail !
+À partir de là, vous pouvez commencer à personnaliser ce Linktree en modifiant le HTML et le CSS selon vos besoins.
 
 N'hésitez pas à explorer les fichiers de variables CSS pour comprendre comment ils sont organisés & comment les utiliser au mieux dans votre projet.
 
