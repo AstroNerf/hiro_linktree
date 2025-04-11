@@ -1,18 +1,56 @@
-# Base de projet Linktree HTML/CSS
+# LinkTree Clone - Hiver 2025
 <img width="1431" alt="Capture d’écran 2025-04-10 à 18 27 39" src="https://github.com/user-attachments/assets/8b4b8abc-ed1f-46ce-978b-85358a5f6de5" />
 Salut la team ! 👋
 
-Ceci est le repo de base pour votre Projet Linktree en pure HTML & CSS. Vous trouverez ici tous les éléments fondamentaux pour démarrer le projet tout en respectant les meilleures pratiques de développement web moderne.
+Voici ma version du projet Linktree de cette saison hiver 2025. Ce projet a été réalisé en pure HTML & CSS sans aucune autre stack ! Je t'invite à explorer le code pour y découvrir les bonnes pratiques (clean code) & des astuces de développement version senior web dev ^^
 
-## Structure HTML imposée par le projet
+## Spécifications techniques
+Ce projet respecte scrupuleusement les exigences suivantes :
 
-Le projet nécessite d'utiliser les balises sémantiques fondamentales :
+• **Technologies autorisées** : Uniquement HTML & CSS
+  - Aucun autre langage de programmation n'est autorisé
+  - Aucune librairie ou framework externe n'est permis
+  - Séparation stricte: le CSS doit être exclusivement dans des fichiers externes (.css)
 
-* **Header** : Cette section contiendra l'en-tête de votre page, idéalement avec votre identité visuelle et votre nom/titre. C'est la première impression que les visiteur·euse·s auront de votre Linktree.
+• **Approche de conception** :
+  - Développement Mobile-First obligatoire
+  - Design entièrement responsive (jusqu'aux écrans 2XL)
+  - Interface "no-scrolling" (tout le contenu visible sans défilement)
 
-* **Main** : C'est le cœur de votre Linktree où vous placerez tous vos liens et contenus principaux. Cette balise indique au navigateur et aux technologies d'assistance que c'est ici que se trouve le contenu principal.
+• **Éléments obligatoires** à inclure :
+  - 1 image minimum
+  - 1 titre principal
+  - 1 sous-titre explicatif
+  - 3 boutons interactifs minimum
+  - 3 icônes distinctes minimum
+  - 1 zone de navigation
+  - 1 pied de page (footer)
 
-* **Footer** : Cette partie clôture votre page et contient généralement des informations secondaires comme les mentions légales, les crédits, ou encore des liens vers vos réseaux sociaux.
+• **Structure HTML requise** :
+  - Utilisation des balises sémantiques essentielles: `<head>`, `<header>`, `<main>`, `<footer>`
+  - Organisation logique avec `<div>`, `<section>` ou autres balises structurantes appropriées
+
+• **Fonctionnalités CSS avancées** :
+  - Minimum 3 animations distinctes
+  - Minimum 3 micro-interactions/micro-actions différentes
+  - Utilisation obligatoire de Flexbox et/ou Grid pour la mise en page
+
+• **Conformité technique** :
+  - Code intégralement validé selon les standards W3C
+  - Attention: une seule erreur de validation = échec du projet (0/40 points)
+  - Respect des meilleures pratiques de développement web (clean code)
+
+• **Direction artistique** :
+  - Choix imposé parmi 4 styles de design: Futurisme, Glassmorphisme, Pixel Art ou Design Asymétrique
+  - Influences autorisées: Neumorphisme et Minimalisme comme inspirations complémentaires
+
+## Déploiement :
+
+Projet déployé avec [Surge](https://surge.sh), une plateforme d'hébergement statique ultra-rapide
+- Surge.sh offre un déploiement simplifié via ligne de commande en une seule commande
+- Solution idéale pour les projets HTML/CSS purs grâce à sa gratuité, sa simplicité d'utilisation et ses performances élevées
+- Permet d'obtenir un URL public personnalisable instantanément sans configuration complexe
+[Version Beta](https://hiro-tree.surge.sh)
 
 ## Organisation des fichiers
 <img width="1238" alt="Capture d’écran 2025-04-10 à 18 49 13" src="https://github.com/user-attachments/assets/5538664e-a350-445c-9709-e4ec960d671a" />
@@ -35,18 +73,6 @@ style.css                   → Le fichier CSS principal qui importe toutes les 
     └── boutons.css         → Composants de boutons prêts à l'emploi
 ```
 
-## Pourquoi utiliser des variables CSS ?
-
-Les variables CSS (aussi appelées propriétés personnalisées) transforment complètement votre façon de travailler :
-
-1. **Cohérence visuelle** : Modifiez une couleur ou une taille à un seul endroit & tout votre site s'adapte automatiquement. Fini les rechercher/remplacer risqués !
-
-2. **Maintenabilité** : Lorsque votre projet grandit, les variables vous évitent de vous perdre dans des centaines de lignes de CSS. Tout est organisé & nommé de façon logique.
-
-3. **Travail d'équipe simplifié** : Vous travaillez en groupe ? Les variables créent un langage commun : tout le monde sait que `var(--color-primary)` est la couleur principale du projet.
-
-4. **Responsive sans prise de tête** : Grâce aux media queries, vous pouvez modifier la valeur d'une variable selon la taille d'écran, et tous les éléments qui l'utilisent s'adapteront automatiquement.
-
 ## Comment contribuer à ce projet ?
 
 Que vous souhaitiez ajouter des fonctionnalités, corriger des bugs ou simplement améliorer la structure, votre contribution est la bienvenue ! Deux approches s'offrent à vous :
@@ -57,8 +83,8 @@ Le clonage crée une copie locale du projet que vous pouvez modifier tout en gar
 
 ```bash
 # Dans votre terminal
-git clone git@github.com:AstroNerf/base_linktree.git
-cd base_linktree
+git clone git@github.com:AstroNerf/hiro_linktree.git
+cd hiro_linktree
 
 # Créez une nouvelle branche pour vos modifications
 git checkout -b ma-nouvelle-fonctionnalite
@@ -84,10 +110,10 @@ Le fork crée votre propre copie du projet sur votre compte GitHub, vous donnant
 
 ```bash
 # Clonez le repository
-git clone git@github.com:AstroNerf/base_linktree.git
+git clone git@github.com:AstroNerf/hiro_linktree.git
 
 # Accédez au dossier du projet
-cd base_linktree
+cd hiro_linktree
 
 # Ouvrez le projet dans VS Code (si vous l'utilisez)
 code .
@@ -95,7 +121,7 @@ code .
 # Ou simplement ouvrez index.html dans votre navigateur préféré
 ```
 
-À partir de là, vous pouvez commencer à personnaliser votre Linktree en modifiant le HTML et le CSS selon vos besoins. La structure et les variables sont déjà en place pour vous faciliter le travail !
+À partir de là, vous pouvez commencer à personnaliser ce Linktree en modifiant le HTML et le CSS selon vos besoins.
 
 N'hésitez pas à explorer les fichiers de variables CSS pour comprendre comment ils sont organisés & comment les utiliser au mieux dans votre projet.
 
