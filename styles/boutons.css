@@ -7,8 +7,8 @@
   --button-border-radius: 0px;
   --button-transition: all 0.3s ease;
   --button-arrow-transition: all 0.7s ease;
-  --button-focus-ring-color: rgba(0, 0, 0, 0.5);
-  --button-focus-ring-width: 0.2rem;
+  --button-focus-ring-color: rgba(255, 72, 0, 0.7);
+  --button-focus-ring-width: 0.1rem;
 }
 
 .btn {
@@ -81,6 +81,10 @@
     padding-top: var(--spacing-1);
     margin-left: var(--spacing-4);
   }
+
+  .btn:hover {
+    transform: rotate(-1deg);
+  }
   
   .btn:hover .btn-arrow-icon {
     margin-left: var(--spacing-6);
@@ -99,6 +103,7 @@
     --p: 100%;
     --t: 0.3s;
     color: #fff;
+    transform: rotate(0deg);
   }
   
 }

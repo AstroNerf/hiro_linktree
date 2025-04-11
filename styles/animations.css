@@ -1,1 +1,64 @@
 /*Ton fichier pour toutes tes animations @Keyframes*/
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        /* Animation jusqu'à la largeur exacte d'une seule copie du contenu */
+        transform: translate3d(-50%, 0, 0);
+      }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes glitch-jitter {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    98.5%, 99% {
+      transform: translateX(-0.5%); /* Très léger décalage */
+    }
+    99.3%, 99.6% {
+      transform: translateX(0.7%); /* Petit saut dans l'autre direction */
+    }
+  }
+
+  @keyframes glitch-flicker {
+    0%, 5%, 10%, 15%, 20%, 25%, 30%, 35%, 40%, 45%, 50%, 55%, 60%, 65%, 70%, 75%, 80%, 85%, 90%, 95%, 100% {
+      opacity: 1;
+      transform: translateX(0) skewX(0);
+    }
+    7.5% {
+      opacity: 0.95;
+      transform: translateX(-1px) skewX(0.5deg);
+    }
+    73.5% {
+      opacity: 0.9;
+      transform: translateX(1px) skewX(-0.5deg);
+    }
+  }
+
+/* comment appliquer ces animations ? */
+/* Ligne normale sans effet de fondu 
+  <div class="marquee-container">
+    <div class="marquee-content"> */
+
+/* Ligne avec fondu à droite 
+    <div class="marquee-container fade-right">
+      <div class="marquee-content direction-reverse"> */
+
+/* Ligne avec fondu au centre
+      <div class="marquee-container fade-center">
+        <div class="marquee-content speed-slow"> */
+
+/* Ligne avec fondu aux extrémités
+        <div class="marquee-container fade-edges">
+          <div class="marquee-content speed-fast"> */
