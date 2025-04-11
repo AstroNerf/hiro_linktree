@@ -1,5 +1,19 @@
 /* Ton fichier contenant toutes les variables de layout */
 
+/* Espacements horizontaux */
+.space-x-xs > * + * { margin-left: var(--spacing-1); } /* Cette méthode utilise le sélecteur d'adjacence * + * qui cible chaque élément précédé par un autre élément dans le même parent, créant ainsi un espacement uniforme entre les éléments sans affecter le premier élément. */
+.space-x-sm > * + * { margin-left: var(--spacing-2); }
+.space-x-md > * + * { margin-left: var(--spacing-3); }
+.space-x-lg > * + * { margin-left: var(--spacing-4); }
+.space-x-xl > * + * { margin-left: var(--spacing-6); }
+
+/* Espacements verticaux */
+.space-y-xs > * + * { margin-top: var(--spacing-1); }
+.space-y-sm > * + * { margin-top: var(--spacing-2); }
+.space-y-md > * + * { margin-top: var(--spacing-3); }
+.space-y-lg > * + * { margin-top: var(--spacing-4); }
+.space-y-xl > * + * { margin-top: var(--spacing-6); }
+
 :root {
   /* --------------------------GENERAL------------------------- */
 
@@ -31,8 +45,8 @@
 
   /* Quelques valeurs fixes utiles */
   --w-container: min(90%, 1200px); /* conteneur principal responsive */
-  --w-button: 4rem;
-  --h-button: 2rem;
+
+
 
 
   /* ------------------------TYPO---------------------------- */
@@ -49,7 +63,7 @@
   --line-height-base: 1.5;
 
   /* --------------------------ESPACEMENTS---------------------------- */
-
+ 
   /* Espacements */
   --spacing-0: 0;
   --spacing-1: 0.25rem; /* 4px */
