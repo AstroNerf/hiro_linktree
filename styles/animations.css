@@ -1,5 +1,23 @@
 /*Ton fichier pour toutes tes animations @Keyframes*/
 
+/* Animation keyframes */
+@keyframes rain-drop {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8; /* Apparition progressive */
+  }
+  90% {
+    opacity: 0.8; /* Maintien de l'opacité pendant la montée */
+  }
+  100% {
+    bottom: 100%; /* Montée jusqu'en haut */
+    opacity: 0; /* Disparition en arrivant en haut */
+  }
+}
+
 /* @keyframes marquee {
   0% {
       transform: translateX(0);

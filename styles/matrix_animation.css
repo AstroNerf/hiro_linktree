@@ -1,0 +1,96 @@
+/* Container principal de l'animation: l'idée est d'avoir des caractères qui partent du bas vers le haut*/
+.matrix-reverse-rain {
+    /* background-color: yellowgreen; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  /* Colonnes individuelles : nombre de 12 pour le maximum de grille possible utilisant Grid */
+  .rain-column {
+    position: relative;
+    height: 100%;
+    text-align: center;
+  }
+  
+  /* Style & animation des caractères */
+  .rain-column span {
+    color: var(--alert-opacity);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: rain-drop 3s infinite linear;
+  }
+  
+
+  /* Délais aléatoires (non-séquentiels) par colonne */
+  /* Animation pour le premier caractère de chaque colonne */
+  .rain-column:nth-child(1) .char-1 { animation-delay: 1.7s; }
+  .rain-column:nth-child(2) .char-1 { animation-delay: 0.3s; }
+  .rain-column:nth-child(3) .char-1 { animation-delay: 2.1s; }
+  .rain-column:nth-child(4) .char-1 { animation-delay: 0.8s; }
+  .rain-column:nth-child(5) .char-1 { animation-delay: 2.5s; }
+  .rain-column:nth-child(6) .char-1 { animation-delay: 0.5s; }
+  .rain-column:nth-child(7) .char-1 { animation-delay: 1.9s; }
+  .rain-column:nth-child(8) .char-1 { animation-delay: 0.2s; }
+  .rain-column:nth-child(9) .char-1 { animation-delay: 2.7s; }
+  .rain-column:nth-child(10) .char-1 { animation-delay: 1.1s; }
+  .rain-column:nth-child(11) .char-1 { animation-delay: 2.3s; }
+  .rain-column:nth-child(12) .char-1 { animation-delay: 0.6s; }
+  
+  /* Animation pour le deuxième caractère de chaque colonne avec des délais différents */
+  .rain-column:nth-child(1) .char-2 { animation-delay: 0.4s; }
+  .rain-column:nth-child(2) .char-2 { animation-delay: 1.5s; }
+  .rain-column:nth-child(3) .char-2 { animation-delay: 0.9s; }
+  .rain-column:nth-child(4) .char-2 { animation-delay: 2.2s; }
+  .rain-column:nth-child(5) .char-2 { animation-delay: 1.3s; }
+  .rain-column:nth-child(6) .char-2 { animation-delay: 2.8s; }
+  .rain-column:nth-child(7) .char-2 { animation-delay: 0.7s; }
+  .rain-column:nth-child(8) .char-2 { animation-delay: 2.4s; }
+  .rain-column:nth-child(9) .char-2 { animation-delay: 1.2s; }
+  .rain-column:nth-child(10) .char-2 { animation-delay: 2.6s; }
+  .rain-column:nth-child(11) .char-2 { animation-delay: 0.1s; }
+  .rain-column:nth-child(12) .char-2 { animation-delay: 1.8s; }
+  
+  /* Animation pour le troisième caractère de chaque colonne */
+  .rain-column:nth-child(1) .char-3 { animation-delay: 2.9s; }
+  .rain-column:nth-child(2) .char-3 { animation-delay: 1.2s; }
+  .rain-column:nth-child(3) .char-3 { animation-delay: 2.0s; }
+  .rain-column:nth-child(4) .char-3 { animation-delay: 0.6s; }
+  .rain-column:nth-child(5) .char-3 { animation-delay: 1.8s; }
+  .rain-column:nth-child(6) .char-3 { animation-delay: 0.1s; }
+  .rain-column:nth-child(7) .char-3 { animation-delay: 2.6s; }
+  .rain-column:nth-child(8) .char-3 { animation-delay: 1.1s; }
+  .rain-column:nth-child(9) .char-3 { animation-delay: 0.5s; }
+  .rain-column:nth-child(10) .char-3 { animation-delay: 1.9s; }
+  .rain-column:nth-child(11) .char-3 { animation-delay: 0.7s; }
+  .rain-column:nth-child(12) .char-3 { animation-delay: 2.2s; }
+  
+  /* Animation pour le quatrième caractère de chaque colonne */
+  .rain-column:nth-child(1) .char-4 { animation-delay: 1.6s; }
+  .rain-column:nth-child(2) .char-4 { animation-delay: 2.7s; }
+  .rain-column:nth-child(3) .char-4 { animation-delay: 0.4s; }
+  .rain-column:nth-child(4) .char-4 { animation-delay: 1.7s; }
+  .rain-column:nth-child(5) .char-4 { animation-delay: 0.3s; }
+  .rain-column:nth-child(6) .char-4 { animation-delay: 2.3s; }
+  .rain-column:nth-child(7) .char-4 { animation-delay: 1.0s; }
+  .rain-column:nth-child(8) .char-4 { animation-delay: 0.8s; }
+  .rain-column:nth-child(9) .char-4 { animation-delay: 2.4s; }
+  .rain-column:nth-child(10) .char-4 { animation-delay: 0.2s; }
+  .rain-column:nth-child(11) .char-4 { animation-delay: 1.4s; }
+  .rain-column:nth-child(12) .char-4 { animation-delay: 2.9s; }
+
+/* Style de base est spécifiques pour iPhone SE : le media queries ne commencent donc qu'à partir d'une taille d'écran supérieur à 380px */
+@media (min-width: 380px) {
+  .matrix-reverse-rain {
+    height: 70%;
+  }
+}

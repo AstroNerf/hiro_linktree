@@ -8,6 +8,7 @@
     --blk: #222222;
     --wht: #FEFEFE;
     --alert: #FF4800;
+    --alert-opacity: rgb(255, 72, 0, 0.2); /*presque transparent : 0.8 à peine transparent ; 0.5 mi-transparent*/
     --alert-hover: #AD0707;
     --message: #C2EBC4;
     --message-hover:#9DD8A0;

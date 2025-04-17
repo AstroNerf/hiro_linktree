@@ -240,6 +240,10 @@ h2 {
   justify-content: end;
 }
 
+/*---------  MAIN BOTTOM ANIMATION  -------*/
+/* voir Matrix_animation.css file */
+
+
 
 /*---------  FOOTER  -------*/
 .footer-content {
@@ -300,6 +304,8 @@ h2 {
 }
 
 /*---------  QUERIES  -------*/
+
+
 @media (min-width: 380px) {
   .menu-icons {
     display: flex;
@@ -338,8 +344,6 @@ h2 {
     height: 18px;
     color: var(--alert);
   }
-
-  
 
   h1:hover h1::first-letter {
     transform: rotate(-2deg);
