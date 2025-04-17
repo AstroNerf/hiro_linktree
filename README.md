@@ -1,5 +1,5 @@
 # LinkTree Clone - Hiver 2025
-<img width="1431" alt="Capture d’écran 2025-04-10 à 18 27 39" src="https://github.com/user-attachments/assets/8b4b8abc-ed1f-46ce-978b-85358a5f6de5" />
+<img width="1436" alt="preview de la page web" src="https://github.com/user-attachments/assets/5f05d395-24df-4392-9ada-1d9bb3a2c9f8" />
 Salut la team ! 👋
 
 Voici ma version du projet Linktree de cette saison hiver 2025. Ce projet a été réalisé en pure HTML & CSS sans aucune autre stack ! Je t'invite à explorer le code pour y découvrir les bonnes pratiques (clean code) & des astuces de développement version senior web dev ^^
@@ -23,7 +23,7 @@ Ce projet respecte scrupuleusement les exigences suivantes :
   - 1 sous-titre explicatif
   - 3 boutons interactifs minimum
   - 3 icônes distinctes minimum
-  - 1 zone de navigation
+  - 1 zone de navigation (si nécessaire)
   - 1 pied de page (footer)
 
 • **Structure HTML requise** :
