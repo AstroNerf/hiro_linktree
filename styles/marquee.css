@@ -1,0 +1,109 @@
+:root {
+  --text-rows: 10; /* Nombre de lignes */
+  --text-wall-height: 40%; /* Hauteur totale du pavé */
+  --base-speed: 4s; /* Vitesse de base pour les animations */
+  --speed-variance: 1s; /* Variation maximale de vitesse */
+  --text-opacity: 0.2; /* Transparence globale du texte */
+  --steps-odd: 100; /* Nombre d'étapes pour les lignes impaires */
+  --steps-even: 120; /* Nombre d'étapes pour les lignes paires */
+}
+
+/* Conteneur principal du pavé de texte */
+.text-wall {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--text-wall-height);
+  height: var(--text-wall-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: -1rem;
+  z-index: -1;
+  pointer-events: none; /* Empêche l'interaction avec le texte */
+  /* overflow: hidden; */
+}
+
+/* Chaque ligne de texte défilant */
+.marquee-container {
+  /* background-color: pink; */
+  /* background-color: rgba(255, 192, 203, 0.1);  */
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+  height: 1rem;
+  margin: 0;
+  padding: 0;
+  order: calc(100 - var(--index, 0));
+  overflow: hidden;
+}
+
+/* Animation de base */
+.marquee {
+  position: absolute;
+  display: flex;
+  width: max-content;
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%) translateZ(0); /* Accélération GPU pour animation fluide */
+  will-change: transform; /* Indique au navigateur d'optimiser les transformations */
+}
+
+/* Styles du texte */
+.marquee__text {
+  font-size: clamp(14px, 1.5vw, 20px); /* Taille responsive */
+  color: var(--alert);
+  white-space: nowrap;
+  flex-shrink: 0;
+  opacity: var(--text-opacity);
+}
+
+/* Animation de défilement */
+@keyframes marquee-left {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateY(-50%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes marquee-left {
+    0% {
+      transform: translateY(-50%) translateX(0);
+    }
+    100% {
+      transform: translateY(-50%) translateX(-20%);
+    }
+  }
+}
+
+/* Variations de vitesse et direction basées sur la position */
+/* .marquee-container:nth-child(odd) .marquee {
+  animation: marquee-left calc(var(--base-speed) + (var(--index, 0) * 2s))
+    steps(100) infinite;
+}
+
+.marquee-container:nth-child(even) .marquee {
+  animation: marquee-left calc(var(--base-speed) + (var(--index, 0) * 1.5s))
+    steps(120) infinite;
+} */
+
+/* Variations de direction basées sur la position, mais vitesse constante */
+.marquee-container:nth-child(odd) .marquee {
+  animation: marquee-left var(--base-speed) steps(var(--steps-odd)) infinite;
+}
+
+.marquee-container:nth-child(even) .marquee {
+  animation: marquee-left var(--base-speed) steps(var(--steps-even)) infinite;
+}

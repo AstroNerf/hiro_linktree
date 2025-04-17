@@ -223,89 +223,23 @@ h2 {
 /*---------  MAIN BOTTOM  -------*/
 .main-bottom-container {
   /* background-color: greenyellow; */
-  /* position: absolute;
-  left: var(--spacing-2);
-  bottom: var(--spacing-3); */
+  position: relative;
   width: var(--w-100);
   display: flex;
   flex-direction: column;
   align-items: end;
+  justify-content: end;
+  z-index: 10;
 }
 
-.marquee-background {
-  background-color: transparent;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: var(--w-100);
+.main-bottom-content-container {
+  width: var(--w-70);
   display: flex;
   flex-direction: column;
-  z-index: -1;
-  pointer-events: none;
+  align-items: end;
+  justify-content: end;
 }
 
-.marquee-container {
-  position: relative; /* Important pour le positionnement des pseudo-éléments */
-  /* width: var(--w-100); */
-  width: fit-content; 
-  transform: translateZ(0);
-  /* height: 30px; */
-  overflow: hidden;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content; /* S'adapte au contenu */
-  will-change: transform;
-  animation: scroll 25s linear infinite;
-  
-  /* Forcer l'accélération matérielle pour une fluidité maximale */
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.marquee-content {
-  display: flex;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 10s steps(100) infinite;
-
-  color: var(--alert);
-  font-size: var(--text-base);
-}
-
-.marquee-content span {
-  display: inline-block;
-  animation: glitch-flicker 2s steps(1) infinite;
-}
-
-.direction-reverse {
-  animation-name: marquee-reverse;
-}
-
-.speed-slow {
-  animation-duration: 35s;
-}
-
-.speed-fast {
-  animation-duration: 2s;
-}
-
-.fade-edges::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, 
-                 var(--bg-color, #f2f0ee) 0%, 
-                 transparent 15%, 
-                 transparent 85%, 
-                 var(--bg-color, #f2f0ee) 100%);
-  pointer-events: none;
-}
 
 /*---------  FOOTER  -------*/
 .footer-content {
@@ -340,7 +274,8 @@ h2 {
 }
 
 .footer-content-hiro-link {
-  color: var(--wht);
+  color: var(--cray);
+  font-style: italic;
   transition: var(--link-transition);
 }
 
@@ -403,6 +338,8 @@ h2 {
     height: 18px;
     color: var(--alert);
   }
+
+  
 
   h1:hover h1::first-letter {
     transform: rotate(-2deg);
