@@ -19,7 +19,7 @@ TOUTES LES VARIABLES SONT IMPORTEES D'AUTRES FICHIERS DANS LE DOSSIER STYLES
 html,
 body {
   max-height: 100dvh;
-  height: 100dvhh;
+  height: 100dvh;
   margin: 0;
   padding: 0;
   max-width: var(--w-100);
@@ -304,8 +304,7 @@ h2 {
 }
 
 /*---------  QUERIES  -------*/
-
-
+/* le code de base est designé pour l'iphone SE : ce qui signifie que les médias queries ne commencent qu'à 380px soit 5px de plus que l'iphone SE */
 @media (min-width: 380px) {
   .menu-icons {
     display: flex;
