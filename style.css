@@ -3,7 +3,7 @@ TOUTES LES VARIABLES SONT IMPORTEES D'AUTRES FICHIERS DANS LE DOSSIER STYLES
 */
 
 /*------  IMPORT   -----*/
-@import "./styles/all_variables.css"; /* qu'un seuk fichier qui contient toutes les variables */
+@import "./styles/all_variables.css"; /* qu'un seul fichier qui contient toutes les variables */
 
 /*------  RESET CSS  -----*/
 *,
@@ -18,7 +18,7 @@ TOUTES LES VARIABLES SONT IMPORTEES D'AUTRES FICHIERS DANS LE DOSSIER STYLES
 
 html,
 body {
-  max-height: 100dvh;
+  max-height: 100dvh; /* */
   height: 100dvh;
   margin: 0;
   padding: 0;
