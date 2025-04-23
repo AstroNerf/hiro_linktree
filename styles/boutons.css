@@ -5,10 +5,10 @@
   --button-padding-x: var(--spacing-4);
   --button-font-size: var(--text-sm);
   --button-border-radius: 0px;
-  --button-transition: all 0.3s ease;
+  --button-transition: all 0.7s ease;
   --button-arrow-transition: all 0.7s ease;
-  --button-focus-ring-color: rgba(255, 72, 0, 0.7);
-  --button-focus-ring-width: 0.1rem;
+  --button-focus-ring-color: rgba(255, 72, 0);
+  --button-focus-ring-width: 0.25rem;
 }
 
 .btn {
@@ -29,22 +29,32 @@
   cursor: pointer;
   user-select: none;
   background-color: var(--primary-light);
-  color: var(--primary);
+  color: black;
   border: 1px solid var(--shadow-dark);
   border-radius: var(--radius-sm);
   transition: var(--button-transition);
   text-align: center;
 }
 
-.btn:focus {
+/* focus-visible est plus moderne et précis que :focus */
+.btn:focus-visible {
+  outline: var(--button-focus-ring-width) solid var(--button-focus-ring-color);
+  outline-offset: 0.2rem;
+  box-shadow: 0 0 0 0.1rem var(--blk); /* contour secondaire pour plus de contraste */
+  background-color: var(--primary-light-hover, #f8f8f8);
+  position: relative;
+  z-index: 1;
+}
+
+/* Au cas où :focus-visible ne fonctionne pas sur certains navigateurs */
+.btn:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 0 0 0 var(--button-focus-ring-width)
-    var(--button-focus-ring-color);
+  box-shadow: none;
 }
 
 .btn-arrow-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   transform: rotate(45deg);
   padding-top: var(--spacing-1);
   margin-left: var(--spacing-1);
@@ -56,15 +66,19 @@
   transform: rotate(90deg);
 }
 
+.link-text {
+  display: inline-block;
+  margin-right: var(--spacing-1);
+}
+
 .liquid {
-  color: var(--wht);
+  color: var(--primary-dark);
   background-color: var(--alert);
 }
 
 .liquid:active {
   background-color: var(--alert-hover);
 }
-
 
 .btn-desktop-only {
   display: none;
@@ -120,9 +134,6 @@
   width: 100%;
 }
 
-
-
-
 @media (min-width: 768px) {
   .btn {
     width: 20rem;
@@ -137,28 +148,33 @@
 
   .btn:hover {
     transform: rotate(-1deg);
+    text-decoration: underline;
+    color: var(--wht);
+    background-color: black;
+    /* box-shadow: 0 2px 0 var(--alert); */
   }
-  
+
   .btn:hover .btn-arrow-icon {
     margin-left: var(--spacing-6);
   }
 
   .liquid {
-    color: var(--blk);
+    color: black;
     background: linear-gradient(#ff4800 0 0) no-repeat calc(200% - var(--p, 0%))
       100% / 200% var(--p, 0.2em);
     transition: 0.3s var(--t, 0s),
       background-position 0.3s calc(0.3s - var(--t, 0s));
   }
-  
+
   .liquid:hover,
   .liquid:active {
     --p: 100%;
     --t: 0.3s;
-    color: #fff;
+    color: black;
     transform: rotate(0deg);
+    box-shadow: 0 0 0 var(--alert);
+    background-color: transparent;
   }
-  
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -166,22 +182,22 @@
     --button-transition: none;
     --button-arrow-transition: none;
   }
-  
+
   .btn:hover,
   .btn:focus-visible {
     transform: none;
   }
-  
+
   .btn:hover .btn-arrow-icon {
     transform: none;
     margin-left: var(--spacing-1);
   }
-  
+
   .liquid {
     transition: none;
     background: var(--alert);
   }
-  
+
   .liquid:hover {
     --p: 100%;
     --t: 0s;

@@ -15,15 +15,17 @@
 
 
     <!--  HEADER SECTION  -->
-    <a href="#main-content" class="skip-link">Passer au contenu principal</a>  <!-- lien d'évitement en début de page pour les users clavier / ce qui les amènent directement à la section main -->
+    <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+    <!-- lien d'évitement en début de page pour les users clavier / ce qui les amènent directement à la section main -->
     <header>
         <h1 class="header-brand-title">
-            <a href="index.html">
-                <span class="header-brand-title-letter-italic" aria-hidden="true">/-/</span><span class="visually-hidden">Hiro</span><span aria-hidden="true">iro</span> Rabbit
-            </a> <!-- aria-hidden="true" pour éviter que les lecteurs d'écran ne prononcent ces caractères de manière confuse. -->
+            <span class="header-brand-title-letter-italic" aria-hidden="true">/-/</span><span
+                class="visually-hidden">Hiro</span><span aria-hidden="true">iro</span>
+            Rabbit<!-- aria-hidden="true" pour éviter que les lecteurs d'écran ne prononcent ces caractères de manière confuse. -->
         </h1>
         <div class="header-avatar-container" aria-hidden="true">
-            <img src="./assets/images/baboon.png" alt="" class="header-avatar"> <!-- dans mon cas, cette image est purement décorative. J'utilise donc l'attribut alt vide pour signaler explicitement aux technologies d'assistance (lecteurs d'écran) qu'elle doit être ignorée -->
+            <img src="./assets/images/baboon.png" alt="" class="header-avatar">
+            <!-- dans mon cas, cette image est purement décorative. J'utilise donc l'attribut alt vide pour signaler explicitement aux technologies d'assistance (lecteurs d'écran) qu'elle doit être ignorée -->
             <!-- la combinaison (alt="" + aria-hidden="true") crée une redondance intentionnelle qui garantit que l'image sera correctement ignorée par toutes les technologies d'assistance, même celles qui pourraient avoir des comportements particuliers avec l'un ou l'autre de ces attributs. -->
         </div>
     </header>
@@ -31,40 +33,44 @@
 
     <!--  MAIN SECTION  -->
     <main id="main-content">
-        <div class="links-container" role="navigation" aria-label="Liens vers réseaux sociaux">
+        <nav class="links-container" aria-label="Liens vers réseaux sociaux">
             <a href="https://www.linkedin.com/in/vic-th0r-6aa023100/" target="_blank" rel="noopener noreferrer"
-                class="btn" aria-label="LinkedIn - Ouvre dans un nouvel onglet">
-                Linkedin <span aria-hidden="true"> <span class="visually-hidden"> S'ouvre dans un nouvel onglet</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        class="btn-arrow-icon" aria-hidden="true" focusable="false">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
-                    </svg>
-                </span>
+                class="btn" aria-label="Linkedin, s'ouvre dans un nouvel onglet">
+                <span class="link-text">Linkedin </span>
+                <span class="visually-hidden">(s'ouvre dans un nouvel onglet)</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    class="btn-arrow-icon" role="img" aria-hidden="true" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
+                </svg>
+
             </a>
 
-            <a href="https://github.com/AstroNerf" target="_blank" rel="noopener noreferrer" class="btn"
-                aria-label="Github - Ouvre dans un nouvel onglet">
-                Github <span aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        class="btn-arrow-icon" aria-hidden="true" focusable="false">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
-                    </svg>
-                </span>
+            <a href="https://github.com/AstroNerf" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Github, s'ouvre dans un nouvel onglet">
+                <span class="link-text">Github</span>
+                <span class="visually-hidden">(s'ouvre dans un nouvel onglet)</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    class="btn-arrow-icon" role="img" aria-hidden="true" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
+                </svg>
+
             </a>
 
-            <a href="https://www.malt.fr/profile/victhor" target="_blank" rel="noopener noreferrer" class="btn liquid"
-                aria-label="Malt - Ouvre dans un nouvel onglet">
-                Hire Me <span aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        class="btn-arrow-icon" aria-hidden="true" focusable="false">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
-                    </svg>
-                </span>
+            <a href="https://www.malt.fr/profile/victhor" target="_blank" rel="noopener noreferrer" class="btn liquid" aria-label="Malt, s'ouvre dans un nouvel onglet">
+                <span class="link-text">Hire Me</span>
+                <span class="visually-hidden"> sur Malt (s'ouvre dans un nouvel onglet)</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    class="btn-arrow-icon" role="img" aria-hidden="true" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        d="M12.013 21L12 3.211m7 6.777L12 3L5 9.988" stroke-width="1" />
+                </svg>
+
             </a>
-        </div>
+        </nav>
 
         <!--  ASIDE NAVBAR SECTION : Burger button & icons animation -->
         <div class="menu-toggle">
@@ -86,8 +92,8 @@
 
             <div id="menu-icons-container" class="menu-icons">
                 <!-- Le container à une id pour être référencé par aria-controls -->
-                <a href="https://joinmastodon.org/about" target="_blank" rel="noopener noreferrer" class="icon-circle"
-                    aria-label="Mastodon - Ouvre dans un nouvel onglet">
+                <a href="https://joinmastodon.org/about" target="_blank" rel="noopener noreferrer" class="icon-circle" aria-label="Mastodon (s'ouvre dans un nouvel onglet)">
+                    <span class="visually-hidden">Mastodon (s'ouvre dans un nouvel onglet)</span>
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1.9em" height="1.9em"
                         viewBox="0 0 24 24">
                         <g fill="none" stroke="#515251" stroke-linecap="round" stroke-linejoin="round"
@@ -98,16 +104,16 @@
                         </g>
                     </svg>
                 </a>
-                <a href="https://element.io/" target="_blank" rel="noopener noreferrer" class="icon-circle"
-                    aria-label="Element - Ouvre dans un nouvel onglet">
+                <a href="https://element.io/" target="_blank" rel="noopener noreferrer" class="icon-circle" aria-label="Element (s'ouvre dans un nouvel onglet)">
+                    <span class="visually-hidden">Element (s'ouvre dans un nouvel onglet)</span>
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1.9em" height="1.9em"
                         viewBox="0 0 24 24">
                         <path fill="#515251"
                             d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12s12-5.373 12-12S18.627 0 12 0m-1.314 4.715c3.289 0 5.956 2.66 5.956 5.943a.879.879 0 0 1-1.758 0a4.194 4.194 0 0 0-4.198-4.189a.878.878 0 1 1 0-1.754m-5.092 9.504a.88.88 0 0 1-.879-.877a5.95 5.95 0 0 1 5.956-5.945a.878.878 0 1 1 0 1.753a4.195 4.195 0 0 0-4.198 4.191a.88.88 0 0 1-.879.878m7.735 5.067c-3.29 0-5.957-2.662-5.957-5.944a.88.88 0 0 1 1.758 0a4.194 4.194 0 0 0 4.199 4.189a.879.879 0 1 1 0 1.755m0-2.683a.88.88 0 0 1-.88-.876a.88.88 0 0 1 .88-.878a4.195 4.195 0 0 0 4.199-4.19a.878.878 0 0 1 1.758 0c0 3.282-2.667 5.944-5.957 5.944" />
                     </svg>
                 </a>
-                <a href="https://briarproject.org/" target="_blank" rel="noopener noreferrer" class="icon-circle"
-                    aria-label="Briar Project - Ouvre dans un nouvel onglet">
+                <a href="https://briarproject.org/" target="_blank" rel="noopener noreferrer" class="icon-circle" aria-label="Briar (s'ouvre dans un nouvel onglet)">
+                    <span class="visually-hidden">Briar (s'ouvre dans un nouvel onglet)</span>
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1.9em" height="1.9em"
                         viewBox="0 0 48 48">
                         <path fill="none" stroke="#515251" stroke-linecap="round" stroke-linejoin="round"
@@ -132,8 +138,8 @@
         </div>
 
         <!--  MAIN BOTTOM ANIMATION  -->
-        <div class="matrix-reverse-rain" aria-hidden="true" role="presentation"  tabindex="-1"
-        aria-label="Animation décorative">
+        <div class="matrix-reverse-rain" aria-hidden="true" role="presentation" tabindex="-1"
+            aria-label="Animation décorative">
             <!-- aria-hidden signifie que le texte ne sera pas lu par la liseuse // role="presentation" renforce l'idée que ce contenu est purement visuel // tabindex="-1" garantit qu'il ne sera pas accessible via la navigation au clavier -->
             <div class="rain-column">
                 <span class="char-1">#</span>
@@ -215,14 +221,14 @@
     <!-- FOOTER SECTION  -->
     <footer aria-label="crédits et inspiration">
         <p class="footer-content">
-            Inspired by 
-                <a href="https://www.hiro.so/" target="_blank" rel="noopener noreferrer"
-                    class="footer-content-hiro-link" aria-label="Hiro - Ouvre dans un nouvel onglet">HIRO</a>
-            
-                with
-            
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                class="footer-heart-icon" role="img" aria-labelledby="heart-title">
+            Inspired by
+            <a href="https://www.hiro.so/" target="_blank" rel="noopener noreferrer" class="footer-content-hiro-link"
+                aria-label="Hiro - Ouvre dans un nouvel onglet">HIRO</a>
+
+            with
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="footer-heart-icon"
+                role="img" aria-labelledby="heart-title">
                 <title id="heart-title">amour</title>
                 <path fill="currentColor"
                     d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z" />

@@ -6,6 +6,7 @@
     --primary-dark: #404040;
     --primary-light: #F6F6F6;
     --blk: #222222;
+    --text-high-contrast: #000000;
     --wht: #FEFEFE;
     --alert: #FF4800;
     --alert-opacity: rgb(255, 72, 0, 0.2); /*presque transparent : 0.8 à peine transparent ; 0.5 mi-transparent*/

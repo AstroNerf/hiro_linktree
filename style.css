@@ -131,6 +131,7 @@ h3 {
   letter-spacing: 2px;
 }
 
+
 .header-brand-title-letter-italic {
   letter-spacing: -1.2px;
   margin-right: 2px;
@@ -230,10 +231,17 @@ h3 {
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
+.icon-circle:focus-visible {
+  outline: 3px solid var(--alert); 
+  outline-offset: 2px; 
+  box-shadow: 0 0 0 1px white; 
+  border-radius: 50%; 
+  transition: outline-color 0.2s; 
+}
+
 .icon-circle:focus {
-  outline: none;
-  box-shadow: 0 0 0 var(--button-focus-ring-width)
-    var(--button-focus-ring-color);
+  outline: 3px solid var(--alert);
+  outline-offset: 2px;
 }
 
 /* bouton burger icon */
@@ -412,14 +420,6 @@ h3 {
     width: 18px;
     height: 18px;
     color: var(--alert);
-  }
-
-  h1:hover h1::first-letter {
-    transform: rotate(-2deg);
-  }
-
-  h1:hover h1::third-letter {
-    transform: rotate(5deg);
   }
 }
 
