@@ -10,16 +10,17 @@
     z-index: -1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    pointer-events: none; /* pour empêcher de cliquer dessus */
   }
   
-  /* Colonnes individuelles : nombre de 12 pour le maximum de grille possible utilisant Grid */
+  /* colonnes individuelles : nombre de 12 pour le maximum de grille possible utilisant Grid */
   .rain-column {
     position: relative;
     height: 100%;
     text-align: center;
   }
   
-  /* Style & animation des caractères */
+  /* style & animation des caractères */
   .rain-column span {
     color: var(--alert-opacity);
     position: absolute;
@@ -31,8 +32,8 @@
   }
   
 
-  /* Délais aléatoires (non-séquentiels) par colonne */
-  /* Animation pour le premier caractère de chaque colonne */
+  /* délais aléatoires (non-séquentiels) par colonne */
+  /* animation pour le premier caractère de chaque colonne */
   .rain-column:nth-child(1) .char-1 { animation-delay: 1.7s; }
   .rain-column:nth-child(2) .char-1 { animation-delay: 0.3s; }
   .rain-column:nth-child(3) .char-1 { animation-delay: 2.1s; }
@@ -46,7 +47,7 @@
   .rain-column:nth-child(11) .char-1 { animation-delay: 2.3s; }
   .rain-column:nth-child(12) .char-1 { animation-delay: 0.6s; }
   
-  /* Animation pour le deuxième caractère de chaque colonne avec des délais différents */
+  /* animation pour le deuxième caractère de chaque colonne avec des délais différents */
   .rain-column:nth-child(1) .char-2 { animation-delay: 0.4s; }
   .rain-column:nth-child(2) .char-2 { animation-delay: 1.5s; }
   .rain-column:nth-child(3) .char-2 { animation-delay: 0.9s; }
@@ -60,7 +61,7 @@
   .rain-column:nth-child(11) .char-2 { animation-delay: 0.1s; }
   .rain-column:nth-child(12) .char-2 { animation-delay: 1.8s; }
   
-  /* Animation pour le troisième caractère de chaque colonne */
+  /* animation pour le troisième caractère de chaque colonne */
   .rain-column:nth-child(1) .char-3 { animation-delay: 2.9s; }
   .rain-column:nth-child(2) .char-3 { animation-delay: 1.2s; }
   .rain-column:nth-child(3) .char-3 { animation-delay: 2.0s; }
@@ -74,7 +75,7 @@
   .rain-column:nth-child(11) .char-3 { animation-delay: 0.7s; }
   .rain-column:nth-child(12) .char-3 { animation-delay: 2.2s; }
   
-  /* Animation pour le quatrième caractère de chaque colonne */
+  /* animation pour le quatrième caractère de chaque colonne */
   .rain-column:nth-child(1) .char-4 { animation-delay: 1.6s; }
   .rain-column:nth-child(2) .char-4 { animation-delay: 2.7s; }
   .rain-column:nth-child(3) .char-4 { animation-delay: 0.4s; }
@@ -92,5 +93,19 @@
 @media (min-width: 380px) {
   .matrix-reverse-rain {
     height: 70%;
+  }
+}
+
+/* support pour les préférences de mouvement réduit : accéssibilité */
+@media (prefers-reduced-motion: reduce) {
+  /* les animations persistantes peuvent provoquer de l'inconfort, des vertiges ou des nausées chez certain·e·s utilisateur·rices, notamment celleux souffrant de troubles vestibulaires (WCAG 2.1 - Critère 2.3.3). */
+  .matrix-reverse-rain {
+    display: none; /* arrêter complètement l'animation */
+    animation-duration: 0s !important;/* ou la réduire significativement */
+    transition-duration: 0s !important;
+  }
+  
+  .rain-column span {
+    animation: none !important;
   }
 }

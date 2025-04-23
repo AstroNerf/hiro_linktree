@@ -14,12 +14,14 @@
 .btn {
   position: relative;
   width: 20rem;
+  min-height: 44px; /* hauteur minimale pour accessibilité */
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: var(--button-padding-y) var(--button-padding-x);
+  padding: max(var(--button-padding-y), 8px) var(--button-padding-x); /* minimum padding vertical pour accessibilité*/
   font-family: var(--font-main);
-  font-weight: 100;
+  font-weight: 400;
+  letter-spacing: 0.01em; /* Améliore la lisibilité pour les polices légères */
   font-size: var(--button-font-size);
   text-align: center;
   text-decoration: none;
@@ -68,6 +70,57 @@
   display: none;
 }
 
+/* -------   Accessibilité ---------- */
+/* Pour que les users de lecteurs d'écran comprennent qu'il y a une interactivité */
+.sr-button-hint {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Ajout d'un message quand le bouton est actif (focus) pour les lecteurs d'écran */
+.btn:focus-visible .sr-button-hint-active {
+  display: inline;
+}
+
+/* -------   Variantes de boutons ---------- */
+.btn-secondary {
+  background-color: var(--alert);
+}
+
+.btn-secondary:hover {
+  background-color: #0d9668; /* Version plus foncée du vert secondaire */
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-lg {
+  font-size: var(--text-h3);
+  padding: var(--spacing-3) var(--spacing-6);
+}
+
+.btn-sm {
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-1) var(--spacing-2);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+
 
 
 @media (min-width: 768px) {
@@ -108,37 +161,31 @@
   
 }
 
-/* -------   Variantes de boutons ---------- */
-.btn-secondary {
-  background-color: var(--alert);
-}
-
-.btn-secondary:hover {
-  background-color: #0d9668; /* Version plus foncée du vert secondaire */
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-primary);
-  color: white;
-}
-
-.btn-lg {
-  font-size: var(--text-h3);
-  padding: var(--spacing-3) var(--spacing-6);
-}
-
-.btn-sm {
-  font-size: var(--font-size-sm);
-  padding: var(--spacing-1) var(--spacing-2);
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --button-transition: none;
+    --button-arrow-transition: none;
+  }
+  
+  .btn:hover,
+  .btn:focus-visible {
+    transform: none;
+  }
+  
+  .btn:hover .btn-arrow-icon {
+    transform: none;
+    margin-left: var(--spacing-1);
+  }
+  
+  .liquid {
+    transition: none;
+    background: var(--alert);
+  }
+  
+  .liquid:hover {
+    --p: 100%;
+    --t: 0s;
+    color: #fff;
+    background: var(--alert);
+  }
 }

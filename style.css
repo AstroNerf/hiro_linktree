@@ -18,13 +18,18 @@ TOUTES LES VARIABLES SONT IMPORTEES D'AUTRES FICHIERS DANS LE DOSSIER STYLES
 
 html,
 body {
-  max-height: 100dvh; /* */
-  height: 100dvh;
+  max-height: 100vh;
+  height: 100vh;
+  max-width: var(--w-100);
   margin: 0;
   padding: 0;
-  max-width: var(--w-100);
   overflow-x: hidden;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*------ GENERIC CLASSES  -----*/
@@ -38,8 +43,8 @@ body {
 }
 
 header {
-  flex: 1; /* Partage l'espace restant avec le footer */
-  min-height: 0; /* Important pour que flex puisse réduire la hauteur si nécessaire */
+  flex: 1; /* partage l'espace restant avec le footer */
+  min-height: 0; /* important pour que flex puisse réduire la hauteur si nécessaire */
   width: var(--w-100);
   padding: var(--spacing-2);
   padding-bottom: var(--spacing-4);
@@ -52,7 +57,7 @@ header {
 main {
   position: relative;
   width: var(--w-100);
-  height: 90dvh; /* Hauteur fixe pour le contenu principal */
+  height: 90dvh; /* hauteur fixe pour le contenu principal */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,18 +71,18 @@ main {
 }
 
 footer {
-  flex: 1; /* Partage l'espace restant avec le header */
-  min-height: 0; /* Important pour que flex puisse réduire la hauteur si nécessaire */
+  flex: 1; /* partage l'espace restant avec le header */
+  min-height: 0; /* important pour que flex puisse réduire la hauteur si nécessaire */
   padding-top: var(--spacing-2);
 }
 
-h1 {
+h2 {
   font-family: var(--font-title);
   font-size: var(--text-h3);
   text-align: right;
 }
 
-h2 {
+h3 {
   font-family: var(--font-title);
   font-size: var(--text-base);
   font-style: italic;
@@ -86,10 +91,42 @@ h2 {
 }
 
 /*---------  CUSTOM CLASSES  -------*/
-
 /*---------  HEADER  -------*/
+.skip-link {
+  position: absolute;
+  top: 0px;
+  left: -500px; /* position hors écran par défaut */
+
+  background-color: #0d6efd; /*couleur de fond ultra contrasté avec le texte en blanc */
+  color: white; 
+  padding: 8px 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  
+  /* accessibilité supplémentaire */
+  z-index: 9999; /* s'assure qu'il apparaît au-dessus de tout autre contenu de la page */
+  transition: left 0.3s ease; /* animation douce pour l'apparition */
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* apparition en focus */
+.skip-link:focus {
+  left: 0; /* fait apparaître le lien */
+  outline: 3px solid #ffbf47; /* bordure visible du focus pour un contraste supplémentaire */
+}
+
+/* style au survol si le/la user utilise la souris après le focus */
+.skip-link:hover {
+  background-color: #0a58ca; /* version légèrement plus foncée en hover (survol) */
+  text-decoration: underline;
+}
+
+
 .header-brand-title {
   font-family: var(--font-brand);
+  font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -119,6 +156,18 @@ h2 {
   gap: var(--gap-sm);
 }
 
+/* message invisible visuellement mais accessible aux lecteurs d'écran */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /*-------------- ☎️ ASIDE NAVBAR  -------------*/
 .menu-toggle {
   /* background-color: purple; */
@@ -142,6 +191,12 @@ h2 {
   transform: translateX(-500px);
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
+}
+
+/* pour asssurer que la tabulation logique fonctionne correctement */
+.menu-icons .icon-circle:focus-visible { /* :focus-visible pour rendre l'indicateur de focus visible uniquement lors de la navigation au clavier */
+  outline: 2px solid var(--button-focus-ring-color);
+  outline-offset: 2px;
 }
 
 /* je mets un délais d'apparition différent pour chaque icon */
@@ -198,7 +253,7 @@ h2 {
   transition: all 0.3s ease;
 }
 
-/* pour permettre aux icons des liens médias d'apparaître, j'utilise un checkbox qui est invisible et positionné au dessus du bouton burger ce qui donne l'illusion de cliquer dessus */
+/* pour permettre aux icons des liens médias d'apparaître, j'utilise un checkbox qui est invisible & positionné au dessus du bouton burger ce qui donne l'illusion de cliquer dessus */
 .menu-checkbox {
   margin-left: -0.5rem;
   width: 50px;
@@ -208,12 +263,19 @@ h2 {
   z-index: 999;
 }
 
+/* support pour la navigation au clavier */
+.menu-checkbox:focus-visible + .burger-btn {
+  outline: 2px solid var(--button-focus-ring-color);
+  outline-offset: 2px;
+}
+
+
 /* une fois cliqué, la checkbox va avoir un effet sur mes icons qui permet de simuler du javascript */
 .menu-checkbox:checked ~ .menu-icons .icon-circle {
   transform: translateX(0);
 }
 
-/* une fois cliqué, la checkbox va avoir un effet sur mes le burger button : rotation, changement de couleurs */
+/* une fois cliqué, la checkbox va avoir un effet sur mes le burger button : rotation, changement de couleurs. Cet effet est annulable (voir media queries en bas de page)*/
 .menu-checkbox:checked ~ .burger-btn {
   background-color: var(--alert);
   color: var(--blk);
@@ -291,6 +353,14 @@ h2 {
   text-underline-offset: 2px;
 }
 
+.footer-content-hiro-link:focus-visible {
+  outline: 2px solid var(--alert);
+  outline-offset: 2px;
+  text-decoration: underline dotted var(--alert);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
 .footer-content-hiro-link:active {
   color: var(--alert);
   text-decoration-color: var(--alert-dark, var(--alert));
@@ -298,8 +368,8 @@ h2 {
 }
 
 .footer-heart-icon {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   color: var(--alert);
 }
 
@@ -350,5 +420,23 @@ h2 {
 
   h1:hover h1::third-letter {
     transform: rotate(5deg);
+  }
+}
+
+/* support pour les préférences de mouvement réduit : accéssibilité */
+@media (prefers-reduced-motion: reduce) {
+
+  /*-------------- ☎️ ASIDE NAVBAR  -------------*/
+  .menu-icons .icon-circle,
+  .burger-btn,
+  .icon-circle {
+    transition: none !important;
+  }
+  
+  .menu-checkbox:checked ~ .burger-btn {
+    /* maintenir le changement de couleur mais sans rotation */
+    background-color: var(--alert);
+    color: var(--blk);
+    transform: none;
   }
 }
